@@ -9,6 +9,10 @@
 #import "MBViewController.h"
 
 @interface MBViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *bannerView;
+@property (weak, nonatomic) IBOutlet UIPageControl *bannerPageView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *informationToggle;
+@property (weak, nonatomic) IBOutlet UITableView *informationTable;
 
 @end
 
@@ -18,6 +22,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
