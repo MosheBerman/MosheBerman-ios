@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4687A47D172AB95C00C886E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4687A47C172AB95C00C886E6 /* QuartzCore.framework */; };
 		46AD590D172A1178000A58E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD590C172A1178000A58E4 /* UIKit.framework */; };
 		46AD590F172A1178000A58E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD590E172A1178000A58E4 /* Foundation.framework */; };
 		46AD5911172A1178000A58E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD5910172A1178000A58E4 /* CoreGraphics.framework */; };
@@ -23,6 +24,11 @@
 		46AD5933172A1178000A58E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD590E172A1178000A58E4 /* Foundation.framework */; };
 		46AD593B172A1178000A58E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5939172A1178000A58E4 /* InfoPlist.strings */; };
 		46AD593E172A1178000A58E4 /* MosheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD593D172A1178000A58E4 /* MosheTests.m */; };
+		46AD5949172A14D1000A58E4 /* MBBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5948172A14D1000A58E4 /* MBBannerCell.m */; };
+		46AD594B172A14E0000A58E4 /* MBBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AD594A172A14E0000A58E4 /* MBBannerCell.xib */; };
+		46B062A51733291E009C966F /* MBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062A41733291E009C966F /* MBDataSource.m */; };
+		46B062A817332937009C966F /* MBAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062A717332937009C966F /* MBAppData.m */; };
+		46B062AB1733294C009C966F /* MBRepoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062AA1733294C009C966F /* MBRepoData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4687A47C172AB95C00C886E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		46AD5909172A1178000A58E4 /* Moshe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moshe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AD590C172A1178000A58E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		46AD590E172A1178000A58E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +65,16 @@
 		46AD593A172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		46AD593C172A1178000A58E4 /* MosheTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MosheTests.h; sourceTree = "<group>"; };
 		46AD593D172A1178000A58E4 /* MosheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MosheTests.m; sourceTree = "<group>"; };
+		46AD5947172A14D1000A58E4 /* MBBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBannerCell.h; path = Banner/MBBannerCell.h; sourceTree = "<group>"; };
+		46AD5948172A14D1000A58E4 /* MBBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBannerCell.m; path = Banner/MBBannerCell.m; sourceTree = "<group>"; };
+		46AD594A172A14E0000A58E4 /* MBBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MBBannerCell.xib; path = Banner/MBBannerCell.xib; sourceTree = "<group>"; };
+		46B062A31733291E009C966F /* MBDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDataSource.h; path = "Data Source/MBDataSource.h"; sourceTree = "<group>"; };
+		46B062A41733291E009C966F /* MBDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDataSource.m; path = "Data Source/MBDataSource.m"; sourceTree = "<group>"; };
+		46B062A617332937009C966F /* MBAppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAppData.h; path = "Data Source/MBAppData.h"; sourceTree = "<group>"; };
+		46B062A717332937009C966F /* MBAppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAppData.m; path = "Data Source/MBAppData.m"; sourceTree = "<group>"; };
+		46B062A91733294C009C966F /* MBRepoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRepoData.h; path = "Data Source/MBRepoData.h"; sourceTree = "<group>"; };
+		46B062AA1733294C009C966F /* MBRepoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRepoData.m; path = "Data Source/MBRepoData.m"; sourceTree = "<group>"; };
+		46B062AC17332A07009C966F /* MBDisplayCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDisplayCategories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4687A47D172AB95C00C886E6 /* QuartzCore.framework in Frameworks */,
 				46AD590D172A1178000A58E4 /* UIKit.framework in Frameworks */,
 				46AD590F172A1178000A58E4 /* Foundation.framework in Frameworks */,
 				46AD5911172A1178000A58E4 /* CoreGraphics.framework in Frameworks */,
@@ -109,6 +127,7 @@
 				46AD590C172A1178000A58E4 /* UIKit.framework */,
 				46AD590E172A1178000A58E4 /* Foundation.framework */,
 				46AD5910172A1178000A58E4 /* CoreGraphics.framework */,
+				4687A47C172AB95C00C886E6 /* QuartzCore.framework */,
 				46AD5930172A1178000A58E4 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
@@ -121,7 +140,10 @@
 				46AD591C172A1178000A58E4 /* MBAppDelegate.m */,
 				46AD5924172A1178000A58E4 /* MBViewController.h */,
 				46AD5925172A1178000A58E4 /* MBViewController.m */,
+				46B062AC17332A07009C966F /* MBDisplayCategories.h */,
 				46AD5927172A1178000A58E4 /* MBViewController.xib */,
+				46B062A2173328FD009C966F /* Model */,
+				46AD594C172A14E4000A58E4 /* Banner UI */,
 				46AD5913172A1178000A58E4 /* Supporting Files */,
 			);
 			path = Moshe;
@@ -158,6 +180,29 @@
 				46AD5939172A1178000A58E4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46AD594C172A14E4000A58E4 /* Banner UI */ = {
+			isa = PBXGroup;
+			children = (
+				46AD5947172A14D1000A58E4 /* MBBannerCell.h */,
+				46AD5948172A14D1000A58E4 /* MBBannerCell.m */,
+				46AD594A172A14E0000A58E4 /* MBBannerCell.xib */,
+			);
+			name = "Banner UI";
+			sourceTree = "<group>";
+		};
+		46B062A2173328FD009C966F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46B062A31733291E009C966F /* MBDataSource.h */,
+				46B062A41733291E009C966F /* MBDataSource.m */,
+				46B062A617332937009C966F /* MBAppData.h */,
+				46B062A717332937009C966F /* MBAppData.m */,
+				46B062A91733294C009C966F /* MBRepoData.h */,
+				46B062AA1733294C009C966F /* MBRepoData.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +282,7 @@
 				46AD5921172A1178000A58E4 /* Default@2x.png in Resources */,
 				46AD5923172A1178000A58E4 /* Default-568h@2x.png in Resources */,
 				46AD5929172A1178000A58E4 /* MBViewController.xib in Resources */,
+				46AD594B172A14E0000A58E4 /* MBBannerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +320,10 @@
 				46AD5919172A1178000A58E4 /* main.m in Sources */,
 				46AD591D172A1178000A58E4 /* MBAppDelegate.m in Sources */,
 				46AD5926172A1178000A58E4 /* MBViewController.m in Sources */,
+				46AD5949172A14D1000A58E4 /* MBBannerCell.m in Sources */,
+				46B062A51733291E009C966F /* MBDataSource.m in Sources */,
+				46B062A817332937009C966F /* MBAppData.m in Sources */,
+				46B062AB1733294C009C966F /* MBRepoData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +504,7 @@
 				46AD5943172A1178000A58E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46AD5944172A1178000A58E4 /* Build configuration list for PBXNativeTarget "MosheTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +513,7 @@
 				46AD5946172A1178000A58E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
