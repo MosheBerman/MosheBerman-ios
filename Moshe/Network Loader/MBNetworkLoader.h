@@ -14,7 +14,9 @@ typedef void(^MBDataLoaderCompletion)(NSData *data);
 @interface MBNetworkLoader : NSObject
 
 - (id)initWithURL:(NSURL *)url completion:(MBDataLoaderCompletion)completion;
-- (void) start;
+
+- (void)start;
 - (double)progress;
+- (void)cancelCompletion;
 
 @end

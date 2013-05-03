@@ -52,13 +52,13 @@
     return self;
 }
 
-- (void) start
+- (void)start
 {
     [[self connection] start];
 }
 
 //  Allow external objects to cancel the completion block
-- (void) cancelCompletion
+- (void)cancelCompletion
 {
     [self setCompletion:nil];
 }
