@@ -10,6 +10,13 @@
 
 @interface MBDataSource : NSObject
 
+@property (nonatomic, assign) BOOL areAppsReady;
+@property (nonatomic, assign) BOOL areReposReady;
+
+@property (nonatomic, strong) NSMutableArray *apps;
+@property (nonatomic, strong) NSMutableArray *repos;
+
+- (void)reloadData;
 
 
 @end
