@@ -8,6 +8,10 @@
 
 #import "MBBannerCell.h"
 
+@interface MBBannerCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@end
+
 @implementation MBBannerCell
 
 - (id)initWithFrame:(CGRect)frame

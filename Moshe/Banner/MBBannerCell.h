@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MBBannerCell : UICollectionViewCell
-    @property (weak, readonly, nonatomic) IBOutlet UIImageView *imageView;
+
+- (UIImageView*)imageView;
+
 @end
