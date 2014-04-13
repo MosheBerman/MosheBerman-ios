@@ -26,7 +26,7 @@
  *  The URL of the blog post.
  */
 
-@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, strong) NSURL *URL;
 
 /**
  *  The name of the post.
