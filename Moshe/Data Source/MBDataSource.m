@@ -6,14 +6,10 @@
 //  Copyright (c) 2013 Moshe Berman. All rights reserved.
 //
 
-/* Classes */
 #import "MBDataSource.h"
-#import "MBNetworkLoader.h"
 
-/* Constants */
 #import "MBURLConstants.h"
 
-/* Model objects. */
 #import "MBAppData.h"
 #import "MBBlogPostData.h"
 #import "MBRepoData.h"
@@ -82,6 +78,28 @@
     }];
     
 }
+
+
+/**
+ *  This method downloads the banners.
+ */
+
+- (void)loadBannersWithCompletion:(MBDataSourceCompletionBlock)completion
+{
+    
+    NSURL *url = [NSURL URLWithString:kBannersURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        
+        
+        if (completion)
+        {
+            completion();
+        }
+    }];
+}
+
 
 #pragma mark - Process Data
 
@@ -166,20 +184,16 @@
     }
 }
 
-/**
- *  This method downloads the banners.
- */
-
-- (void)loadBannersWithCompletion:(MBDataSourceCompletionBlock)completion
+- (void)processBanners:(NSData *)data
 {
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    NSURL *url = [NSURL URLWithString:kBannersURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (completion) {
-            completion();
-        }
-    }];
+    NSArray *banners = JSON[@"banners"];
+    
+    for (NSDictionary *dictionary in banners)
+    {
+        
+    }
 }
 
 @end
