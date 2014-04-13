@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Moshe Berman. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
-// Can return YES on save operations and such...
+/* A block to handle completed data loads. */
 typedef void(^MBDataLoaderCompletion)(NSData *data);
 
 @interface MBNetworkLoader : NSObject

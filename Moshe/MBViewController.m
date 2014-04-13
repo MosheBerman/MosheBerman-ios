@@ -7,7 +7,7 @@
 //
 
 /* Frameworks. */
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 
 /* Some of our own headers. */
 #import "MBViewController.h"

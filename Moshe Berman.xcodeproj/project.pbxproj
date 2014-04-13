@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4687A47D172AB95C00C886E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4687A47C172AB95C00C886E6 /* QuartzCore.framework */; };
-		46AD590D172A1178000A58E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD590C172A1178000A58E4 /* UIKit.framework */; };
-		46AD590F172A1178000A58E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD590E172A1178000A58E4 /* Foundation.framework */; };
-		46AD5911172A1178000A58E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD5910172A1178000A58E4 /* CoreGraphics.framework */; };
 		46AD5917172A1178000A58E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5915172A1178000A58E4 /* InfoPlist.strings */; };
 		46AD5919172A1178000A58E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5918172A1178000A58E4 /* main.m */; };
 		46AD591D172A1178000A58E4 /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD591C172A1178000A58E4 /* MBAppDelegate.m */; };
@@ -19,9 +15,6 @@
 		46AD5923172A1178000A58E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5922172A1178000A58E4 /* Default-568h@2x.png */; };
 		46AD5926172A1178000A58E4 /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5925172A1178000A58E4 /* MBViewController.m */; };
 		46AD5929172A1178000A58E4 /* MBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5927172A1178000A58E4 /* MBViewController.xib */; };
-		46AD5931172A1178000A58E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD5930172A1178000A58E4 /* SenTestingKit.framework */; };
-		46AD5932172A1178000A58E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD590C172A1178000A58E4 /* UIKit.framework */; };
-		46AD5933172A1178000A58E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AD590E172A1178000A58E4 /* Foundation.framework */; };
 		46AD593B172A1178000A58E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5939172A1178000A58E4 /* InfoPlist.strings */; };
 		46AD593E172A1178000A58E4 /* MosheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD593D172A1178000A58E4 /* MosheTests.m */; };
 		46AD5949172A14D1000A58E4 /* MBBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5948172A14D1000A58E4 /* MBBannerCell.m */; };
@@ -43,11 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4687A47C172AB95C00C886E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		46AD5909172A1178000A58E4 /* Moshe Berman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moshe Berman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46AD590C172A1178000A58E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		46AD590E172A1178000A58E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		46AD5910172A1178000A58E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		46AD5914172A1178000A58E4 /* Moshe Berman-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe Berman-Info.plist"; sourceTree = "<group>"; };
 		46AD5916172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		46AD5918172A1178000A58E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,7 +50,6 @@
 		46AD5925172A1178000A58E4 /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
 		46AD5928172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController.xib; sourceTree = "<group>"; };
 		46AD592F172A1178000A58E4 /* Moshe BermanTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moshe BermanTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46AD5930172A1178000A58E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		46AD5938172A1178000A58E4 /* Moshe BermanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe BermanTests-Info.plist"; sourceTree = "<group>"; };
 		46AD593A172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		46AD593C172A1178000A58E4 /* MosheTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MosheTests.h; sourceTree = "<group>"; };
@@ -86,10 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4687A47D172AB95C00C886E6 /* QuartzCore.framework in Frameworks */,
-				46AD590D172A1178000A58E4 /* UIKit.framework in Frameworks */,
-				46AD590F172A1178000A58E4 /* Foundation.framework in Frameworks */,
-				46AD5911172A1178000A58E4 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46AD5931172A1178000A58E4 /* SenTestingKit.framework in Frameworks */,
-				46AD5932172A1178000A58E4 /* UIKit.framework in Frameworks */,
-				46AD5933172A1178000A58E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +110,6 @@
 			children = (
 				46AD5912172A1178000A58E4 /* Moshe */,
 				46AD5936172A1178000A58E4 /* MosheTests */,
-				46AD590B172A1178000A58E4 /* Frameworks */,
 				46AD590A172A1178000A58E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,18 +121,6 @@
 				46AD592F172A1178000A58E4 /* Moshe BermanTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		46AD590B172A1178000A58E4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				46AD590C172A1178000A58E4 /* UIKit.framework */,
-				46AD590E172A1178000A58E4 /* Foundation.framework */,
-				46AD5910172A1178000A58E4 /* CoreGraphics.framework */,
-				4687A47C172AB95C00C886E6 /* QuartzCore.framework */,
-				46AD5930172A1178000A58E4 /* SenTestingKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		46AD5912172A1178000A58E4 /* Moshe */ = {
@@ -282,6 +250,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MB;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Moshe Berman";
 			};

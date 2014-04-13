@@ -6,13 +6,22 @@
 //  Copyright (c) 2013 Moshe Berman. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
+@interface MBRepoData : NSObject
+
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * htmlURL;
+@property (nonatomic, strong) NSString * repoDescription;
+
+@end
+
 
 /*
- Sample response: 
+ Sample GitHub Repo:
  
  https://api.github.com/users/mosheberman/repos
-
+ 
  {
  "id": 5283215,
  "name": "MBTileParser",
@@ -99,11 +108,3 @@
  }
  
  */
-
-@interface MBRepoData : NSObject
-
-@property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSString * htmlURL;
-@property (nonatomic, strong) NSString * repoDescription;
-
-@end
