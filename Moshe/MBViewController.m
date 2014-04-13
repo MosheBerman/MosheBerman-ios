@@ -394,6 +394,12 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
 
 - (void)cycleBanners
 {
+    NSInteger count = [[[self dataSource] banners] count];
+    
+    if (!count)
+    {
+        return;
+    }
     
     NSIndexPath *path = [[self bannerView] indexPathsForVisibleItems][0];
     
@@ -401,7 +407,7 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     
     index++;
     
-    index = index % [[[self dataSource] banners] count];
+    index = index % count;
     
     NSIndexPath *newIndex = [NSIndexPath indexPathForItem:index inSection:0];
     
