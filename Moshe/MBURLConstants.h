@@ -9,7 +9,7 @@
 #ifndef Moshe_MBURLConstants_h
 #define Moshe_MBURLConstants_h
 
-#define kAppsURL @"http://yetanotheriphoneapp.com/?json=true"
+#define kAppsURL @"http://apps.mosheberman.com/?json=1"
 #define kBlogPostsURL @"http://blog.mosheberman.com/api/get_posts/"
 #define kReposURL @"https://api.github.com/users/mosheberman/repos"
 
