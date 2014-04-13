@@ -13,6 +13,7 @@
 #import "MBViewController.h"
 #import "MBDataSource.h"
 #import "MBDisplayCategories.h"
+#import "MBBannerCell.h"
 
 /* Model objects */
 #import "MBAppData.h"
@@ -21,12 +22,13 @@
 
 /* Cell re-use identifiers. */
 static NSString *CellReuseIdentifier = @"Cell ID";
+static NSString *BannerCellReuseIdentifer = @"Banner Cell";
 
 /**
  *
  */
 
-@interface MBViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MBViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *bannerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *informationToggle;
@@ -52,20 +54,20 @@ static NSString *CellReuseIdentifier = @"Cell ID";
 {
     [super viewDidLoad];
     
-    /** Hook up some KVO goodness here. */
-    [[self dataSource] addObserver:self forKeyPath:@"areAppsReady" options:0 context:nil];
-    [[self dataSource] addObserver:self forKeyPath:@"areBlogPostsReady" options:0 context:nil];
-    [[self dataSource] addObserver:self forKeyPath:@"areReposReady" options:0 context:nil];
-    
     /* Wire up our table. */
     [[self informationTable] setDelegate:self];
     [[self informationTable] setDataSource:self];
     
+    /* Wire up our banner collection view. */
+//    [[self bannerView] setDataSource:self];
+//    [[self bannerView] setDelegate:self];
+    
     /* Where everybody knows your name. */
 	[self setTitle:@"Moshe Berman"];
     
-    /* We need to make sure we have table cells. */
+    /* We need to make sure we have table cells & banner cells. */
     [[self informationTable] registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReuseIdentifier];
+    [[self bannerView] registerClass:[MBBannerCell class] forCellWithReuseIdentifier:BannerCellReuseIdentifer];
     
     /* Respond to category changes by reloading the table. */
     [[self informationToggle] addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
@@ -76,8 +78,9 @@ static NSString *CellReuseIdentifier = @"Cell ID";
      *  TODO: Cache the downloaded data and attempt to reload from disk first.
      */
     
-    [[self dataSource] reloadData];
-    [self reloadData];
+    [[self dataSource] reloadDataWithCompletion:^{
+        [self reloadData];
+    }];
 }
 
 - (void)dealloc
@@ -96,30 +99,6 @@ static NSString *CellReuseIdentifier = @"Cell ID";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-/** ----
- *  @name KVO
- *  ----
- */
-
-/**
- *  This method handles KVO for our our data loader.
- *  See the official documentation for more on this method.
- *
- */
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"areAppsReady"] || [keyPath isEqualToString:@"areReposReady"] || [keyPath isEqualToString:@"areBlogPostsReady"]) {
-        
-        /**
-         *  Call on the main thread explicitly, because the network operations that change these values
-         *  may live on some other thread.
-         */
-        
-        [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-    }
 }
 
 /** ----
@@ -234,13 +213,18 @@ static NSString *CellReuseIdentifier = @"Cell ID";
         return;
     }
     
-    /* ...otherwise, we're interacting with an object, so open it. */
+    /*
+     *  ...otherwise, we're interacting with an object, so open it.
+     *
+     *  For now, just open the associated URL. 
+     *
+     *  TODO: Open fancier detail views.
+     */
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSInteger selectedIndex = [[self informationToggle] selectedSegmentIndex];
     
-    /* If we are displaying apps, we want enough rows for the apps. */
     if (selectedIndex == MBDisplayCategoryApp)
     {
         MBAppData *app = [[self dataSource] apps][indexPath.row];
@@ -249,15 +233,13 @@ static NSString *CellReuseIdentifier = @"Cell ID";
         
     }
     
-    /* If we are displaying blog posts, we want enough rows for the blog posts. */
     else if (selectedIndex == MBDisplayCategoryBlog)
     {
         MBBlogPostData *post = [[self dataSource] blogPosts][indexPath.row];
         NSURL *url = [post URL];
         [self openURL:url];
     }
-    
-    /* If we are displaying code, we want enough rows for the GitHub repos. */
+
     else if (selectedIndex == MBDisplayCategoryCode)
     {
         MBRepoData *repo = [[self dataSource] repos][indexPath.row];
@@ -271,7 +253,7 @@ static NSString *CellReuseIdentifier = @"Cell ID";
 #pragma mark - Helpers
 
 /**
- *
+ *  A quick-and-dirty method that tries to open any URL.
  */
 
 - (void)openURL:(NSURL *)url

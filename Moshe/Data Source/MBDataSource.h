@@ -8,17 +8,30 @@
 
 @import Foundation;
 
-@interface MBDataSource : NSObject
+typedef void(^MBDataSourceCompletionBlock)(void);
 
-@property (nonatomic, assign) BOOL areAppsReady;
-@property (nonatomic, assign) BOOL areBlogPostsReady;
-@property (nonatomic, assign) BOOL areReposReady;
+@interface MBDataSource : NSObject
 
 @property (nonatomic, strong) NSMutableArray *apps;
 @property (nonatomic, strong) NSMutableArray *blogPosts;
 @property (nonatomic, strong) NSMutableArray *repos;
 
-- (void)reloadData;
+@property (nonatomic, strong) NSMutableArray *banners;
 
+/**
+ *  Reloads the table data and calls the completion block for *each* request that is completed.
+ *
+ *  @param completion A completion block that gets called after each category loads.
+ */
+
+- (void)reloadDataWithCompletion:(MBDataSourceCompletionBlock)completion;
+
+/**
+ *  This method downloads the banners.
+ *
+ *  @param completion A completion block that gets called when the data gets loaded.
+ */
+
+- (void)loadBannersWithCompletion:(MBDataSourceCompletionBlock)completion;
 
 @end

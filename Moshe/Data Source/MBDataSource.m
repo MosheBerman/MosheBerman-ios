@@ -34,85 +34,53 @@
         _apps = [[NSMutableArray alloc] init];
         _blogPosts = [[NSMutableArray alloc] init];
         _repos = [[NSMutableArray alloc] init];
-        
-        _networkLoaders = [[NSMutableArray alloc] init];
-        
-        _areAppsReady = NO;
-        _areBlogPostsReady = NO;
-        _areReposReady = NO;
+        _banners = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 #pragma mark - Reload
 
-- (void)reloadData
+- (void)reloadDataWithCompletion:(MBDataSourceCompletionBlock)completion
 {
-
-    /* Clean old loaders */
-    for (MBNetworkLoader *loader in [self networkLoaders])
-    {
-        [loader cancelCompletion];
-    }
-
-    [self setNetworkLoaders:nil];
+    NSURLRequest *appsRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:kAppsURL]];
+    NSURLRequest *blogRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:kBlogPostsURL]];
+    NSURLRequest *reposRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:kReposURL]];
     
-    /* Set up new ones, one per category */
-    [self setNetworkLoaders:[[NSMutableArray alloc] init]];
-    
-    MBNetworkLoader *appsLoader = [[MBNetworkLoader alloc] initWithURL:[NSURL URLWithString:kAppsURL] completion:^(NSData *data) {
-        if (!data) {
-            return;
+    [NSURLConnection sendAsynchronousRequest:appsRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data)
+        {
+            [self processApps:data];
+
+            if (completion)
+            {
+                completion();
+            }
         }
-        [self processApps:data];
     }];
     
-    
-    MBNetworkLoader *blogLoader = [[MBNetworkLoader alloc] initWithURL:[NSURL URLWithString:kBlogPostsURL] completion:^(NSData *data) {
-        if (!data) {
-            return;
+    [NSURLConnection sendAsynchronousRequest:blogRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data)
+        {
+            [self processBlogPosts:data];
+            if (completion)
+            {
+                completion();
+            }
         }
-        [self processBlogPosts:data];
     }];
     
-    MBNetworkLoader *reposLoader = [[MBNetworkLoader alloc] initWithURL:[NSURL URLWithString:kReposURL] completion:^(NSData *data) {
-        if (!data) {
-            return;
+    [NSURLConnection sendAsynchronousRequest:reposRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data)
+        {
+            [self processRepos:data];
+            if (completion)
+            {
+                completion();
+            }
         }
-        [self processRepos:data];
     }];
     
-    /* Hang on to the network loaders. */
-    [[self networkLoaders] addObject:appsLoader];
-    [[self networkLoaders] addObject:reposLoader];
-    [[self networkLoaders] addObject:blogLoader];
-    
-    [appsLoader start];
-    [reposLoader start];
-    [blogLoader start];
-}
-
-#pragma mark - KVO
-
-- (void)setAreAppsReady:(BOOL)areAppsReady
-{
-    [self willChangeValueForKey:@"areAppsReady"];
-    _areAppsReady = areAppsReady;
-    [self didChangeValueForKey:@"areAppsReady"];
-}
-
-- (void)setAreBlogPostsReady:(BOOL)areReposReady
-{
-    [self willChangeValueForKey:@"areBlogPostsReady"];
-    _areBlogPostsReady = areReposReady;
-    [self didChangeValueForKey:@"areBlogPostsReady"];
-}
-
-- (void)setAreReposReady:(BOOL)areReposReady
-{
-    [self willChangeValueForKey:@"areReposReady"];
-    _areReposReady = areReposReady;
-    [self didChangeValueForKey:@"areReposReady"];
 }
 
 #pragma mark - Process Data
@@ -135,8 +103,6 @@
         
         [[self apps] addObject:app];
     }
-    
-    [self setAreAppsReady:YES];
 }
 
 - (void)processBlogPosts:(NSData *)data
@@ -181,8 +147,6 @@
         
         [[self blogPosts] addObject:post];
     }
-    
-    [self setAreBlogPostsReady:YES];
 }
 
 - (void)processRepos:(NSData *)data
@@ -200,14 +164,22 @@
         
         [[self repos] addObject:repo];
     }
-    
-    [self setAreReposReady:YES];
 }
 
-/* Hacky way to consume API data, assuming keys and property names are identical */
-- (SEL)setterFromKey:(NSString *)key
+/**
+ *  This method downloads the banners.
+ */
+
+- (void)loadBannersWithCompletion:(MBDataSourceCompletionBlock)completion
 {
-    return NSSelectorFromString([NSString stringWithFormat:@"set%@",[key capitalizedString]]);
+    
+    NSURL *url = [NSURL URLWithString:kBannersURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
 @end
