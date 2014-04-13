@@ -106,6 +106,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		469DEA6418FAAEEA0005797A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				46B062AC17332A07009C966F /* MBDisplayCategories.h */,
+				46B062B117332C17009C966F /* MBURLConstants.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		469DEA6518FAAF5F0005797A /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				46B062A31733291E009C966F /* MBDataSource.h */,
+				46B062A41733291E009C966F /* MBDataSource.m */,
+			);
+			name = "Data Source";
+			sourceTree = "<group>";
+		};
 		46AD5900172A1178000A58E4 = {
 			isa = PBXGroup;
 			children = (
@@ -144,9 +162,9 @@
 				46AD591C172A1178000A58E4 /* MBAppDelegate.m */,
 				46AD5924172A1178000A58E4 /* MBViewController.h */,
 				46AD5925172A1178000A58E4 /* MBViewController.m */,
-				46B062AC17332A07009C966F /* MBDisplayCategories.h */,
-				46B062B117332C17009C966F /* MBURLConstants.h */,
 				46AD5927172A1178000A58E4 /* MBViewController.xib */,
+				469DEA6518FAAF5F0005797A /* Data Source */,
+				469DEA6418FAAEEA0005797A /* Headers */,
 				46B062AD17332BBA009C966F /* Network Loader */,
 				46B062A2173328FD009C966F /* Model */,
 				46AD594C172A14E4000A58E4 /* Banner UI */,
@@ -201,8 +219,6 @@
 		46B062A2173328FD009C966F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46B062A31733291E009C966F /* MBDataSource.h */,
-				46B062A41733291E009C966F /* MBDataSource.m */,
 				46B062A617332937009C966F /* MBAppData.h */,
 				46B062A717332937009C966F /* MBAppData.m */,
 				46B062A91733294C009C966F /* MBRepoData.h */,
@@ -448,9 +464,11 @@
 		46AD5942172A1178000A58E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moshe/Moshe Berman-Prefix.pch";
 				INFOPLIST_FILE = "Moshe/Moshe Berman-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Moshe Berman";
 				WRAPPER_EXTENSION = app;
 			};
@@ -459,9 +477,11 @@
 		46AD5943172A1178000A58E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moshe/Moshe Berman-Prefix.pch";
 				INFOPLIST_FILE = "Moshe/Moshe Berman-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "Moshe Berman";
 				WRAPPER_EXTENSION = app;
 			};
