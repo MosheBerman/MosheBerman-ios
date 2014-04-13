@@ -90,18 +90,6 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     }];
 }
 
-- (void)dealloc
-{
-    /**
-     *  LLDB calls [super dealloc] for us with ARC, but we need to remove our KVO by ourselves.
-     *  Please KVO responsibly.
-     */
-    
-    [[self dataSource] removeObserver:self forKeyPath:@"areAppsReady"];
-    [[self dataSource] removeObserver:self forKeyPath:@"areBlogPostsReady"];
-    [[self dataSource] removeObserver:self forKeyPath:@"areReposReady"];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
