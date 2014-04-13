@@ -6,15 +6,17 @@
 //  Copyright (c) 2013 Moshe Berman. All rights reserved.
 //
 
+/* Classes */
 #import "MBDataSource.h"
-
-#import "MBURLConstants.h"
-
 #import "MBNetworkLoader.h"
 
-#import "MBAppData.h"
-#import "MBRepoData.h"
+/* Constants */
+#import "MBURLConstants.h"
 
+/* Model objects. */
+#import "MBAppData.h"
+#import "MBBlogPostData.h"
+#import "MBRepoData.h"
 
 @interface MBDataSource ()
 
@@ -56,7 +58,7 @@
     [self setNetworkLoaders:nil];
     
     /* Set up new ones, one per category */
-    [self setNetworkLoaders:[NSMutableArray new]];
+    [self setNetworkLoaders:[[NSMutableArray alloc] init]];
     
     MBNetworkLoader *appsLoader = [[MBNetworkLoader alloc] initWithURL:[NSURL URLWithString:kAppsURL] completion:^(NSData *data) {
         if (!data) {
@@ -98,6 +100,13 @@
     [self didChangeValueForKey:@"areAppsReady"];
 }
 
+- (void)setAreBlogPostsReady:(BOOL)areReposReady
+{
+    [self willChangeValueForKey:@"areBlogPostsReady"];
+    _areBlogPostsReady = areReposReady;
+    [self didChangeValueForKey:@"areBlogPostsReady"];
+}
+
 - (void)setAreReposReady:(BOOL)areReposReady
 {
     [self willChangeValueForKey:@"areReposReady"];
@@ -112,7 +121,7 @@
     NSArray *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     for (NSDictionary *dictionary in JSON) {
-        MBAppData *app = [MBAppData new];
+        MBAppData *app = [[MBAppData alloc] init];
         
         [app setAppDescription:dictionary[@"app_description"]];
         [app setName:dictionary[@"app_name"]];
@@ -129,19 +138,48 @@
 
 - (void)processBlogPosts:(NSData *)data
 {
-    NSArray *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    for (NSDictionary *dictionary in JSON) {
-        MBRepoData *repo = [MBRepoData new];
+    //
+    NSArray *posts = JSON[@"posts"];
+    
+    for (NSDictionary *dictionary in posts)
+    {
+        MBBlogPostData *post = [[MBBlogPostData alloc] init];
         
-        [repo setName:dictionary[@"name"]];
-        [repo setHtmlURL:dictionary[@"html_url"]];
-        [repo setRepoDescription:dictionary[@"description"]];
+        /* Process post's tags. */
+        NSMutableArray *tags = [[NSMutableArray alloc] init];
         
-        [[self repos] addObject:repo];
+        for (NSDictionary *tagData in dictionary[@"tags"])
+        {
+            NSString *tagName = tagData[@"title"];
+            [tags addObject:tagName];
+        }
+        
+        /* Process post's tags. */
+        NSMutableArray *categories = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *categoryData in dictionary[@"categories"])
+        {
+            NSString *categoryName = categoryData[@"title"];
+            [categories addObject:categoryName];
+        }
+        
+        /* Prepare the URL. */
+        NSURL *url = [NSURL URLWithString:dictionary[@"url"]];
+        
+        [post setPostID:dictionary[@"id"]];
+        [post setSlug:dictionary[@"slug"]];
+        [post setURL:url];
+        [post setTitle:dictionary[@"title"]];
+        [post setContent:dictionary[@"content"]];
+        [post setTags:tags];
+        [post setCategories:categories];
+        
+        [[self blogPosts] addObject:post];
     }
     
-    [self setAreReposReady:YES];
+    [self setAreBlogPostsReady:YES];
 }
 
 - (void)processRepos:(NSData *)data
@@ -149,8 +187,11 @@
     NSArray *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     for (NSDictionary *dictionary in JSON) {
-        MBRepoData *repo = [MBRepoData new];
+        MBRepoData *repo = [[MBRepoData alloc] init];
         
+        [repo setName:dictionary[@"name"]];
+        [repo setHtmlURL:dictionary[@"html_url"]];
+        [repo setRepoDescription:dictionary[@"description"]];
         
         [[self repos] addObject:repo];
     }
