@@ -14,6 +14,11 @@
 #import "MBDataSource.h"
 #import "MBDisplayCategories.h"
 
+/* Model objects */
+#import "MBAppData.h"
+#import "MBBlogPostData.h"
+#import "MBRepoData.h"
+
 /* Cell re-use identifiers. */
 static NSString *CellReuseIdentifier = @"Cell ID";
 
@@ -183,9 +188,36 @@ static NSString *CellReuseIdentifier = @"Cell ID";
     /* ...otherwise, we'll show the data for the category. */
     else
     {
-        //  Clear interaction related properties
+        /* Set up the default cell properties. */
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleDefault];
+        [[cell textLabel] setTextColor:[UIColor blackColor]];
+        [[cell textLabel] setTextAlignment:NSTextAlignmentLeft];
+        [[cell imageView] setImage:nil];
+        
+        NSInteger selectedIndex = [[self informationToggle] selectedSegmentIndex];
+        
+        /* If we are displaying apps, we want enough rows for the apps. */
+        if (selectedIndex == MBDisplayCategoryApp)
+        {
+            MBAppData *app = [[self dataSource] apps][indexPath.row];
+            [[cell textLabel] setText:[app name]];
+        }
+        
+        /* If we are displaying blog posts, we want enough rows for the blog posts. */
+        else if (selectedIndex == MBDisplayCategoryBlog)
+        {
+            MBBlogPostData *post = [[self dataSource] blogPosts][indexPath.row];
+            [[cell textLabel] setText:[post title]];
+        }
+        
+        /* If we are displaying code, we want enough rows for the GitHub repos. */
+        else if (selectedIndex == MBDisplayCategoryCode)
+        {
+            MBRepoData *repo = [[self dataSource] repos][indexPath.row];
+            [[cell textLabel] setText:[repo name]];
+        }
+        
     }
     
     return cell;
