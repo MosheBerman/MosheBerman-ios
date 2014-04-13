@@ -293,6 +293,20 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     return 0.0f;
 }
 
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
+     if (self.dataSource.banners.count > indexPath.row)
+     {
+         MOSBanner *banner = [[self dataSource] banners][indexPath.row];
+         
+         NSURL *url = [banner url];
+         [self openURL:url];
+     }
+    
+}
 #pragma mark - Helpers
 
 /**
