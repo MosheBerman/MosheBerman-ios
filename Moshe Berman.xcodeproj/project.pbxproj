@@ -111,13 +111,49 @@
 			name = "Data Source";
 			sourceTree = "<group>";
 		};
-		469DEA6F18FAE3630005797A /* Image Mananger */ = {
+		469DEA6F18FAE3630005797A /* Image Manager */ = {
 			isa = PBXGroup;
 			children = (
 				469DEA6C18FAE3600005797A /* MOSImageManager.h */,
 				469DEA6D18FAE3600005797A /* MOSImageManager.m */,
 			);
-			name = "Image Mananger";
+			name = "Image Manager";
+			sourceTree = "<group>";
+		};
+		469DEA7018FAF5D80005797A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				469DEA7218FAF5E70005797A /* Main View Controller */,
+				469DEA6F18FAE3630005797A /* Image Manager */,
+				469DEA6518FAAF5F0005797A /* Data Source */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		469DEA7118FAF5E00005797A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				469DEA7318FAF5EC0005797A /* Main View */,
+				46AD594C172A14E4000A58E4 /* Banner UI */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		469DEA7218FAF5E70005797A /* Main View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46AD5924172A1178000A58E4 /* MBViewController.h */,
+				46AD5925172A1178000A58E4 /* MBViewController.m */,
+			);
+			name = "Main View Controller";
+			sourceTree = "<group>";
+		};
+		469DEA7318FAF5EC0005797A /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				46AD5927172A1178000A58E4 /* MBViewController.xib */,
+			);
+			name = "Main View";
 			sourceTree = "<group>";
 		};
 		46AD5900172A1178000A58E4 = {
@@ -143,14 +179,10 @@
 			children = (
 				46AD591B172A1178000A58E4 /* MBAppDelegate.h */,
 				46AD591C172A1178000A58E4 /* MBAppDelegate.m */,
-				46AD5924172A1178000A58E4 /* MBViewController.h */,
-				46AD5925172A1178000A58E4 /* MBViewController.m */,
-				46AD5927172A1178000A58E4 /* MBViewController.xib */,
-				469DEA6F18FAE3630005797A /* Image Mananger */,
-				469DEA6518FAAF5F0005797A /* Data Source */,
+				469DEA7018FAF5D80005797A /* Controllers */,
 				469DEA6418FAAEEA0005797A /* Headers */,
 				46B062A2173328FD009C966F /* Model */,
-				46AD594C172A14E4000A58E4 /* Banner UI */,
+				469DEA7118FAF5E00005797A /* View */,
 				46AD5913172A1178000A58E4 /* Supporting Files */,
 			);
 			path = Moshe;
