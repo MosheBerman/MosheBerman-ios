@@ -28,7 +28,7 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
  *
  */
 
-@interface MBViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MBViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *bannerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *informationToggle;
@@ -59,8 +59,8 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     [[self informationTable] setDataSource:self];
     
     /* Wire up our banner collection view. */
-//    [[self bannerView] setDataSource:self];
-//    [[self bannerView] setDelegate:self];
+    [[self bannerView] setDataSource:self];
+    [[self bannerView] setDelegate:self];
     
     /* Where everybody knows your name. */
 	[self setTitle:@"Moshe Berman"];
@@ -80,6 +80,10 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     
     [[self dataSource] reloadDataWithCompletion:^{
         [self reloadData];
+    }];
+    
+    [[self dataSource] loadBannersWithCompletion:^{
+        [[self bannerView] reloadData];
     }];
 }
 
@@ -249,6 +253,31 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     
 }
 
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    
+    NSInteger count = [[[self dataSource] banners] count];
+    
+    if (0 == count) {
+        count = 1;
+    }
+    
+    return count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BannerCellReuseIdentifer forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[self bannerView] bounds].size;
+}
 
 #pragma mark - Helpers
 
