@@ -89,6 +89,7 @@
     
     [appsLoader start];
     [reposLoader start];
+    [blogLoader start];
 }
 
 #pragma mark - KVO
@@ -123,9 +124,11 @@
     for (NSDictionary *dictionary in JSON) {
         MBAppData *app = [[MBAppData alloc] init];
         
+        NSURL *url = [NSURL URLWithString:dictionary[@"app_link"]];
+        
         [app setAppDescription:dictionary[@"app_description"]];
         [app setName:dictionary[@"app_name"]];
-        [app setAppURL:dictionary[@"app_link"]];
+        [app setAppURL:url];
         [app setImageURL:dictionary[@"app_image_link"]];
         [app setAppID:dictionary[@"app_id"]];
         [app setVersion:dictionary[@"app_version"]];
@@ -189,8 +192,10 @@
     for (NSDictionary *dictionary in JSON) {
         MBRepoData *repo = [[MBRepoData alloc] init];
         
+        NSURL *url = [NSURL URLWithString:dictionary[@"html_url"]];
+        
         [repo setName:dictionary[@"name"]];
-        [repo setHtmlURL:dictionary[@"html_url"]];
+        [repo setHtmlURL:url];
         [repo setRepoDescription:dictionary[@"description"]];
         
         [[self repos] addObject:repo];
