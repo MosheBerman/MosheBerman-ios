@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		469DEA6818FAC3360005797A /* MOSBlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6718FAC3360005797A /* MOSBlogPost.m */; };
+		469DEA6B18FADFEA0005797A /* MOSBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6A18FADFEA0005797A /* MOSBanner.m */; };
 		46AD5917172A1178000A58E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5915172A1178000A58E4 /* InfoPlist.strings */; };
 		46AD5919172A1178000A58E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5918172A1178000A58E4 /* main.m */; };
 		46AD591D172A1178000A58E4 /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD591C172A1178000A58E4 /* MBAppDelegate.m */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		469DEA6618FAC3360005797A /* MOSBlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOSBlogPost.h; path = "Data Source/MOSBlogPost.h"; sourceTree = "<group>"; };
 		469DEA6718FAC3360005797A /* MOSBlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOSBlogPost.m; path = "Data Source/MOSBlogPost.m"; sourceTree = "<group>"; };
+		469DEA6918FADFEA0005797A /* MOSBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOSBanner.h; path = "Data Source/MOSBanner.h"; sourceTree = "<group>"; };
+		469DEA6A18FADFEA0005797A /* MOSBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOSBanner.m; path = "Data Source/MOSBanner.m"; sourceTree = "<group>"; };
 		46AD5909172A1178000A58E4 /* Moshe Berman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moshe Berman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AD5914172A1178000A58E4 /* Moshe Berman-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe Berman-Info.plist"; sourceTree = "<group>"; };
 		46AD5916172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				469DEA6718FAC3360005797A /* MOSBlogPost.m */,
 				46B062A91733294C009C966F /* MOSRepo.h */,
 				46B062AA1733294C009C966F /* MOSRepo.m */,
+				469DEA6918FADFEA0005797A /* MOSBanner.h */,
+				469DEA6A18FADFEA0005797A /* MOSBanner.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				46AD5926172A1178000A58E4 /* MBViewController.m in Sources */,
 				46AD5949172A14D1000A58E4 /* MBBannerCell.m in Sources */,
 				46B062A51733291E009C966F /* MBDataSource.m in Sources */,
+				469DEA6B18FADFEA0005797A /* MOSBanner.m in Sources */,
 				46B062A817332937009C966F /* MOSApp.m in Sources */,
 				469DEA6818FAC3360005797A /* MOSBlogPost.m in Sources */,
 				46B062AB1733294C009C966F /* MOSRepo.m in Sources */,
