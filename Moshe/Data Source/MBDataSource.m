@@ -29,12 +29,14 @@
     self = [super init];
     if (self) {
         
-        _apps = [NSMutableArray new];
-        _repos = [NSMutableArray new];
+        _apps = [[NSMutableArray alloc] init];
+        _blogPosts = [[NSMutableArray alloc] init];
+        _repos = [[NSMutableArray alloc] init];
         
-        _networkLoaders =[NSMutableArray new];
+        _networkLoaders = [[NSMutableArray alloc] init];
         
         _areAppsReady = NO;
+        _areBlogPostsReady = NO;
         _areReposReady = NO;
     }
     return self;
@@ -53,7 +55,7 @@
 
     [self setNetworkLoaders:nil];
     
-    /* Set up two new ones */
+    /* Set up new ones, one per category */
     [self setNetworkLoaders:[NSMutableArray new]];
     
     MBNetworkLoader *appsLoader = [[MBNetworkLoader alloc] initWithURL:[NSURL URLWithString:kAppsURL] completion:^(NSData *data) {
@@ -64,6 +66,13 @@
     }];
     
     
+    MBNetworkLoader *blogLoader = [[MBNetworkLoader alloc] initWithURL:[NSURL URLWithString:kBlogPostsURL] completion:^(NSData *data) {
+        if (!data) {
+            return;
+        }
+        [self processBlogPosts:data];
+    }];
+    
     MBNetworkLoader *reposLoader = [[MBNetworkLoader alloc] initWithURL:[NSURL URLWithString:kReposURL] completion:^(NSData *data) {
         if (!data) {
             return;
@@ -71,8 +80,10 @@
         [self processRepos:data];
     }];
     
+    /* Hang on to the network loaders. */
     [[self networkLoaders] addObject:appsLoader];
     [[self networkLoaders] addObject:reposLoader];
+    [[self networkLoaders] addObject:blogLoader];
     
     [appsLoader start];
     [reposLoader start];
@@ -116,7 +127,7 @@
     [self setAreAppsReady:YES];
 }
 
-- (void)processRepos:(NSData *)data
+- (void)processBlogPosts:(NSData *)data
 {
     NSArray *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
@@ -125,7 +136,7 @@
         
         [repo setName:dictionary[@"name"]];
         [repo setHtmlURL:dictionary[@"html_url"]];
-        [repo setDescription:dictionary[@"description"]];
+        [repo setRepoDescription:dictionary[@"description"]];
         
         [[self repos] addObject:repo];
     }
@@ -133,7 +144,21 @@
     [self setAreReposReady:YES];
 }
 
-/* Hacky way to consume API dat, assuming keys and property names are identical */
+- (void)processRepos:(NSData *)data
+{
+    NSArray *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    for (NSDictionary *dictionary in JSON) {
+        MBRepoData *repo = [MBRepoData new];
+        
+        
+        [[self repos] addObject:repo];
+    }
+    
+    [self setAreReposReady:YES];
+}
+
+/* Hacky way to consume API data, assuming keys and property names are identical */
 - (SEL)setterFromKey:(NSString *)key
 {
     return NSSelectorFromString([NSString stringWithFormat:@"set%@",[key capitalizedString]]);
