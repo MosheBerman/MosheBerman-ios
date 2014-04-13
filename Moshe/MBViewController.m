@@ -117,7 +117,7 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
             [[self timer] invalidate];
         }
         
-        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(cycleBanners) userInfo:nil repeats:YES];
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(cycleBanners) userInfo:nil repeats:YES];
         [self setTimer:timer];
         
     }];
@@ -401,7 +401,7 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     
     index++;
     
-    index = index % 3;
+    index = index % [[[self dataSource] banners] count];
     
     NSIndexPath *newIndex = [NSIndexPath indexPathForItem:index inSection:0];
     
