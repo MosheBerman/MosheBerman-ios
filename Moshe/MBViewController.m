@@ -32,11 +32,34 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
 
 @interface MBViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+/** 
+ *  A banner for the top of tbe screen
+ */
 @property (weak, nonatomic) IBOutlet UICollectionView *bannerView;
+
+/**
+ *  A toggle for the table
+ */
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *informationToggle;
+
+/**
+ *  The main data table
+ */
+
 @property (weak, nonatomic) IBOutlet UITableView *informationTable;
 
+/**
+ *  A data source object that handles loading the data from the various feeds.
+ */
+
 @property (nonatomic, strong) MBDataSource *dataSource;
+
+/**
+ *  A timer for the top banner
+ */
+
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -87,8 +110,16 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
         [self reloadData];
     }];
     
-    [[self dataSource] loadBannersWithCompletion:^{ 
+    [[self dataSource] loadBannersWithCompletion:^{
         [[self bannerView] reloadSections:[NSIndexSet indexSetWithIndex:0]];
+        
+        if ([self timer]) {
+            [[self timer] invalidate];
+        }
+        
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(cycleBanners) userInfo:nil repeats:YES];
+        [self setTimer:timer];
+        
     }];
 }
 
@@ -357,6 +388,24 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     }
     
     return rowCount;
+}
+
+#pragma mark - Banner Cycle
+
+- (void)cycleBanners
+{
+    
+    NSIndexPath *path = [[self bannerView] indexPathsForVisibleItems][0];
+    
+    NSInteger index = [path row];
+    
+    index++;
+    
+    index = index % 3;
+    
+    NSIndexPath *newIndex = [NSIndexPath indexPathForItem:index inSection:0];
+    
+    [[self bannerView] scrollToItemAtIndexPath:newIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 }
 
 
