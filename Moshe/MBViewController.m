@@ -14,11 +14,13 @@
 #import "MBDataSource.h"
 #import "MBDisplayCategories.h"
 #import "MBBannerCell.h"
+#import "MOSImageManager.h"
 
 /* Model objects */
 #import "MOSApp.h"
 #import "MOSBlogPost.h"
 #import "MOSRepo.h"
+#import "MOSBanner.h"
 
 /* Cell re-use identifiers. */
 static NSString *CellReuseIdentifier = @"Cell ID";
@@ -261,6 +263,17 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MBBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BannerCellReuseIdentifer forIndexPath:indexPath];
+
+    if (self.dataSource.banners.count > indexPath.row)
+    {
+        
+        MOSBanner *banner = [[self dataSource] banners][indexPath.row];
+        NSURL *imageURL = [banner imageURL];
+    
+        [[MOSImageManager sharedManager] loadImageForKey:[imageURL absoluteString] withHandler:^(UIImage *image) {
+            cell.imageView.image = image;
+        }];
+    }
     
     return cell;
 }
