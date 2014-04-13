@@ -10,9 +10,10 @@
 
 #import "MBURLConstants.h"
 
-#import "MBAppData.h"
-#import "MBBlogPostData.h"
-#import "MBRepoData.h"
+#import "MOSApp.h"
+#import "MOSBlogPost.h"
+#import "MOSRepo.h"
+#import "MOSBanner.h"
 
 @interface MBDataSource ()
 
@@ -47,7 +48,7 @@
         if (data)
         {
             [self processApps:data];
-
+            
             if (completion)
             {
                 completion();
@@ -91,12 +92,16 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         
-        
+        if (data)
+        {
+            [self processBanners:data];
+        }
         
         if (completion)
         {
             completion();
         }
+        
     }];
 }
 
@@ -108,7 +113,7 @@
     NSArray *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     for (NSDictionary *dictionary in JSON) {
-        MBAppData *app = [[MBAppData alloc] init];
+        MOSApp *app = [[MOSApp alloc] init];
         
         NSURL *url = [NSURL URLWithString:dictionary[@"app_link"]];
         
@@ -132,7 +137,7 @@
     
     for (NSDictionary *dictionary in posts)
     {
-        MBBlogPostData *post = [[MBBlogPostData alloc] init];
+        MOSBlogPost *post = [[MOSBlogPost alloc] init];
         
         /* Process post's tags. */
         NSMutableArray *tags = [[NSMutableArray alloc] init];
@@ -172,7 +177,7 @@
     NSArray *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     for (NSDictionary *dictionary in JSON) {
-        MBRepoData *repo = [[MBRepoData alloc] init];
+        MOSRepo *repo = [[MOSRepo alloc] init];
         
         NSURL *url = [NSURL URLWithString:dictionary[@"html_url"]];
         
@@ -192,7 +197,16 @@
     
     for (NSDictionary *dictionary in banners)
     {
+        MOSBanner *banner = [[MOSBanner alloc] init];
         
+        NSURL *url = [NSURL URLWithString:dictionary[@"url"]];
+        NSURL *imageURL = [NSURL URLWithString:dictionary[@"image_url"]];
+        
+        [banner setUrl:url];
+        [banner setImageURL:imageURL];
+        [banner setTitle:dictionary[@"title"]];
+        
+        [[self banners] addObject:banner];
     }
 }
 
