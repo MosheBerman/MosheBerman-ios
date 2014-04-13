@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-s2-AK4">
-                    <rect key="frame" x="0.0" y="178" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="213" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0OP-4U-512"/>
@@ -38,10 +38,10 @@
                     </items>
                 </toolbar>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="az4-X8-45J">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
+                    <rect key="frame" x="0.0" y="63" width="320" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="178" id="BRw-c7-8sj"/>
+                        <constraint firstAttribute="height" constant="150" id="Iz4-8f-UMJ"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3vt-EK-LqG">
                         <size key="itemSize" width="50" height="50"/>
@@ -52,23 +52,23 @@
                     <cells/>
                 </collectionView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lNw-dV-Eut">
-                    <rect key="frame" x="0.0" y="222" width="325" height="346"/>
+                    <rect key="frame" x="0.0" y="254" width="320" height="314"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="rI0-s2-AK4" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="3Jr-N2-Xb6"/>
-                <constraint firstAttribute="trailing" secondItem="az4-X8-45J" secondAttribute="trailing" id="4Jk-s9-RLw"/>
-                <constraint firstAttribute="trailing" secondItem="lNw-dV-Eut" secondAttribute="trailing" constant="-5" id="AKd-OZ-D5S"/>
-                <constraint firstItem="lNw-dV-Eut" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="G1m-H0-zcP"/>
-                <constraint firstItem="rI0-s2-AK4" firstAttribute="top" secondItem="6" secondAttribute="top" constant="178" id="OT0-wP-aa3"/>
-                <constraint firstAttribute="trailing" secondItem="rI0-s2-AK4" secondAttribute="trailing" id="X5l-kg-zo6"/>
-                <constraint firstItem="lNw-dV-Eut" firstAttribute="top" secondItem="6" secondAttribute="top" constant="222" id="cad-Rj-TyB"/>
-                <constraint firstItem="az4-X8-45J" firstAttribute="top" secondItem="6" secondAttribute="top" id="fgN-qV-ENf"/>
-                <constraint firstItem="az4-X8-45J" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="gDI-IH-VQc"/>
-                <constraint firstAttribute="bottom" secondItem="lNw-dV-Eut" secondAttribute="bottom" id="wQ3-Pu-DYh"/>
+                <constraint firstAttribute="bottom" secondItem="lNw-dV-Eut" secondAttribute="bottom" id="2fu-Ui-Mzz"/>
+                <constraint firstItem="rI0-s2-AK4" firstAttribute="top" secondItem="6" secondAttribute="top" constant="213" id="77r-JF-kWn"/>
+                <constraint firstItem="az4-X8-45J" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="7he-ZZ-1Hg"/>
+                <constraint firstItem="lNw-dV-Eut" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="ID3-xK-Bgy"/>
+                <constraint firstItem="lNw-dV-Eut" firstAttribute="top" secondItem="6" secondAttribute="top" constant="254" id="ZuA-N8-5E1"/>
+                <constraint firstAttribute="trailing" secondItem="lNw-dV-Eut" secondAttribute="trailing" id="dL3-yM-UD6"/>
+                <constraint firstItem="rI0-s2-AK4" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="gYw-jn-b2a"/>
+                <constraint firstAttribute="trailing" secondItem="rI0-s2-AK4" secondAttribute="trailing" id="hs6-Ov-CdS"/>
+                <constraint firstAttribute="trailing" secondItem="az4-X8-45J" secondAttribute="trailing" id="lAF-Rk-Ce0"/>
+                <constraint firstItem="az4-X8-45J" firstAttribute="top" secondItem="6" secondAttribute="top" constant="63" id="wIZ-vT-Qqd"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
