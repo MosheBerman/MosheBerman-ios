@@ -104,6 +104,6 @@
 
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * htmlURL;
-@property (nonatomic, strong) NSString * description;
+@property (nonatomic, strong) NSString * repoDescription;
 
 @end
