@@ -48,7 +48,7 @@
  *  The URL to the app on the iTunes app store.
  */
 
-@property (nonatomic, strong) NSString * appURL;
+@property (nonatomic, strong) NSURL * appURL;
 
 /**
  *  The name of the app.

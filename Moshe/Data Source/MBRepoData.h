@@ -11,7 +11,7 @@
 @interface MBRepoData : NSObject
 
 @property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSString * htmlURL;
+@property (nonatomic, strong) NSURL * htmlURL;
 @property (nonatomic, strong) NSString * repoDescription;
 
 @end
