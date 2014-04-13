@@ -10,14 +10,30 @@
 
 #import "MBViewController.h"
 
+@interface MBAppDelegate ()
+
+/**
+ *  The root view controller.
+ */
+@property (strong, nonatomic) MBViewController *viewController;
+
+/**
+ *  The root navigation controller.
+ */
+
+@property (strong, nonatomic) UINavigationController *navigationController;
+
+@end
 @implementation MBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+
     self.viewController = [[MBViewController alloc] initWithNibName:@"MBViewController" bundle:nil];
 	self.navigationController = [[UINavigationController alloc] initWithRootViewController:[self viewController]];
+    
     self.window.rootViewController = [self navigationController];
     [self.window makeKeyAndVisible];
 	
