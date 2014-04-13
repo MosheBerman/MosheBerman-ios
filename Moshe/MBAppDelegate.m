@@ -32,9 +32,8 @@
     // Override point for customization after application launch.
     
     UIColor *tint = [UIColor colorWithRed:0.73 green:0.00 blue:0.07 alpha:1.00];
-    
     [[UIView appearance] setTintColor:tint];
-    
+
 
     self.viewController = [[MBViewController alloc] initWithNibName:@"MBViewController" bundle:nil];
 	self.navigationController = [[UINavigationController alloc] initWithRootViewController:[self viewController]];
