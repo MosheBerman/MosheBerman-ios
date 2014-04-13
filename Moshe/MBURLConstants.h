@@ -12,6 +12,7 @@
 #define kAppsURL @"http://apps.mosheberman.com/?json=1"
 #define kBlogPostsURL @"http://blog.mosheberman.com/api/get_posts/"
 #define kReposURL @"https://api.github.com/users/mosheberman/repos"
+#define kBannersURL @"http://mosheberman.com/feeds/banners.json"
 
 
 #endif
