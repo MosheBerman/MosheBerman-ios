@@ -228,12 +228,62 @@ static NSString *CellReuseIdentifier = @"Cell ID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    /* If there's no data, do nothing... */
+    if (0 == [self expectedCount])
+    {
+        return;
+    }
+    
+    /* ...otherwise, we're interacting with an object, so open it. */
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSInteger selectedIndex = [[self informationToggle] selectedSegmentIndex];
+    
+    /* If we are displaying apps, we want enough rows for the apps. */
+    if (selectedIndex == MBDisplayCategoryApp)
+    {
+        MBAppData *app = [[self dataSource] apps][indexPath.row];
+        NSURL *url = [app appURL];
+        [self openURL:url];
+        
+    }
+    
+    /* If we are displaying blog posts, we want enough rows for the blog posts. */
+    else if (selectedIndex == MBDisplayCategoryBlog)
+    {
+        MBBlogPostData *post = [[self dataSource] blogPosts][indexPath.row];
+        NSURL *url = [post URL];
+        [self openURL:url];
+    }
+    
+    /* If we are displaying code, we want enough rows for the GitHub repos. */
+    else if (selectedIndex == MBDisplayCategoryCode)
+    {
+        MBRepoData *repo = [[self dataSource] repos][indexPath.row];
+        NSURL *url = [repo htmlURL];
+        [self openURL:url];
+    }
+    
 }
 
-#pragma mark - Row Counts
+
+#pragma mark - Helpers
 
 /**
- *  Returns the number of rows we would need for a given 
+ *
+ */
+
+- (void)openURL:(NSURL *)url
+{
+    if ([[UIApplication sharedApplication] canOpenURL:url])
+    {
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
+/**
+ *  Returns the number of rows we would need for a given
  *  category to display in a table without accounting
  *  for the case of no data. We can use this to decide in
  *  our table delegate if we have to show a regulare cell
