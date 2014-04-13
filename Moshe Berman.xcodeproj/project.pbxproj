@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		469DEA6818FAC3360005797A /* MBBlogPostData.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6718FAC3360005797A /* MBBlogPostData.m */; };
 		46AD5917172A1178000A58E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5915172A1178000A58E4 /* InfoPlist.strings */; };
 		46AD5919172A1178000A58E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5918172A1178000A58E4 /* main.m */; };
 		46AD591D172A1178000A58E4 /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD591C172A1178000A58E4 /* MBAppDelegate.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		469DEA6618FAC3360005797A /* MBBlogPostData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBlogPostData.h; path = "Data Source/MBBlogPostData.h"; sourceTree = "<group>"; };
+		469DEA6718FAC3360005797A /* MBBlogPostData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBlogPostData.m; path = "Data Source/MBBlogPostData.m"; sourceTree = "<group>"; };
 		46AD5909172A1178000A58E4 /* Moshe Berman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moshe Berman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AD5914172A1178000A58E4 /* Moshe Berman-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe Berman-Info.plist"; sourceTree = "<group>"; };
 		46AD5916172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				46B062A617332937009C966F /* MBAppData.h */,
+				469DEA6618FAC3360005797A /* MBBlogPostData.h */,
+				469DEA6718FAC3360005797A /* MBBlogPostData.m */,
 				46B062A717332937009C966F /* MBAppData.m */,
 				46B062A91733294C009C966F /* MBRepoData.h */,
 				46B062AA1733294C009C966F /* MBRepoData.m */,
@@ -323,6 +328,7 @@
 				46AD5949172A14D1000A58E4 /* MBBannerCell.m in Sources */,
 				46B062A51733291E009C966F /* MBDataSource.m in Sources */,
 				46B062A817332937009C966F /* MBAppData.m in Sources */,
+				469DEA6818FAC3360005797A /* MBBlogPostData.m in Sources */,
 				46B062AB1733294C009C966F /* MBRepoData.m in Sources */,
 				46B062B017332BD8009C966F /* MBNetworkLoader.m in Sources */,
 			);
