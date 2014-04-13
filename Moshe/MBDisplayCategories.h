@@ -9,9 +9,10 @@
 #ifndef Moshe_MBDisplayCategories_h
 #define Moshe_MBDisplayCategories_h
 
-typedef enum {
+NS_ENUM(NSInteger, MBDisplayCategory){
     MBDisplayCategoryApp = 0,
+    MBDisplayCategoryBlog,
     MBDisplayCategoryCode
-} MBDisplayCategory;
+};
 
 #endif
