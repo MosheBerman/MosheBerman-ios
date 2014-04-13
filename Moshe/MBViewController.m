@@ -16,9 +16,9 @@
 #import "MBBannerCell.h"
 
 /* Model objects */
-#import "MBAppData.h"
-#import "MBBlogPostData.h"
-#import "MBRepoData.h"
+#import "MOSApp.h"
+#import "MOSBlogPost.h"
+#import "MOSRepo.h"
 
 /* Cell re-use identifiers. */
 static NSString *CellReuseIdentifier = @"Cell ID";
@@ -69,6 +69,9 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     [[self informationTable] registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReuseIdentifier];
     [[self bannerView] registerClass:[MBBannerCell class] forCellWithReuseIdentifier:BannerCellReuseIdentifer];
     
+    UINib *nib = [UINib nibWithNibName:@"MBBannerCell" bundle:[NSBundle mainBundle]];
+    [[self bannerView] registerNib:nib forCellWithReuseIdentifier:BannerCellReuseIdentifer];
+    
     /* Respond to category changes by reloading the table. */
     [[self informationToggle] addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
     
@@ -82,8 +85,8 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
         [self reloadData];
     }];
     
-    [[self dataSource] loadBannersWithCompletion:^{
-        [[self bannerView] reloadData];
+    [[self dataSource] loadBannersWithCompletion:^{ 
+        [[self bannerView] reloadSections:[NSIndexSet indexSetWithIndex:0]];
     }];
 }
 
@@ -183,21 +186,21 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
         /* If we are displaying apps, we want enough rows for the apps. */
         if (selectedIndex == MBDisplayCategoryApp)
         {
-            MBAppData *app = [[self dataSource] apps][indexPath.row];
+            MOSApp *app = [[self dataSource] apps][indexPath.row];
             [[cell textLabel] setText:[app name]];
         }
         
         /* If we are displaying blog posts, we want enough rows for the blog posts. */
         else if (selectedIndex == MBDisplayCategoryBlog)
         {
-            MBBlogPostData *post = [[self dataSource] blogPosts][indexPath.row];
+            MOSBlogPost *post = [[self dataSource] blogPosts][indexPath.row];
             [[cell textLabel] setText:[post title]];
         }
         
         /* If we are displaying code, we want enough rows for the GitHub repos. */
         else if (selectedIndex == MBDisplayCategoryCode)
         {
-            MBRepoData *repo = [[self dataSource] repos][indexPath.row];
+            MOSRepo *repo = [[self dataSource] repos][indexPath.row];
             [[cell textLabel] setText:[repo name]];
         }
         
@@ -231,7 +234,7 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     
     if (selectedIndex == MBDisplayCategoryApp)
     {
-        MBAppData *app = [[self dataSource] apps][indexPath.row];
+        MOSApp *app = [[self dataSource] apps][indexPath.row];
         NSURL *url = [app appURL];
         [self openURL:url];
         
@@ -239,14 +242,14 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
     
     else if (selectedIndex == MBDisplayCategoryBlog)
     {
-        MBBlogPostData *post = [[self dataSource] blogPosts][indexPath.row];
+        MOSBlogPost *post = [[self dataSource] blogPosts][indexPath.row];
         NSURL *url = [post URL];
         [self openURL:url];
     }
 
     else if (selectedIndex == MBDisplayCategoryCode)
     {
-        MBRepoData *repo = [[self dataSource] repos][indexPath.row];
+        MOSRepo *repo = [[self dataSource] repos][indexPath.row];
         NSURL *url = [repo htmlURL];
         [self openURL:url];
     }
@@ -269,7 +272,7 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BannerCellReuseIdentifer forIndexPath:indexPath];
+    MBBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BannerCellReuseIdentifer forIndexPath:indexPath];
     
     return cell;
 }
@@ -277,6 +280,16 @@ static NSString *BannerCellReuseIdentifer = @"Banner Cell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[self bannerView] bounds].size;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.0f;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.0f;
 }
 
 #pragma mark - Helpers
