@@ -10,6 +10,7 @@
 		469DEA6818FAC3360005797A /* MOSBlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6718FAC3360005797A /* MOSBlogPost.m */; };
 		469DEA6B18FADFEA0005797A /* MOSBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6A18FADFEA0005797A /* MOSBanner.m */; };
 		469DEA6E18FAE3600005797A /* MOSImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6D18FAE3600005797A /* MOSImageManager.m */; };
+		469DEA7518FAF8260005797A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469DEA7418FAF8260005797A /* Images.xcassets */; };
 		46AD5917172A1178000A58E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5915172A1178000A58E4 /* InfoPlist.strings */; };
 		46AD5919172A1178000A58E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5918172A1178000A58E4 /* main.m */; };
 		46AD591D172A1178000A58E4 /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD591C172A1178000A58E4 /* MBAppDelegate.m */; };
@@ -44,6 +45,7 @@
 		469DEA6A18FADFEA0005797A /* MOSBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOSBanner.m; path = "Data Source/MOSBanner.m"; sourceTree = "<group>"; };
 		469DEA6C18FAE3600005797A /* MOSImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOSImageManager.h; path = "Controllers/Image Manager/MOSImageManager.h"; sourceTree = "<group>"; };
 		469DEA6D18FAE3600005797A /* MOSImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOSImageManager.m; path = "Controllers/Image Manager/MOSImageManager.m"; sourceTree = "<group>"; };
+		469DEA7418FAF8260005797A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Moshe Berman/Images.xcassets"; sourceTree = "<group>"; };
 		46AD5909172A1178000A58E4 /* Moshe Berman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moshe Berman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AD5914172A1178000A58E4 /* Moshe Berman-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe Berman-Info.plist"; sourceTree = "<group>"; };
 		46AD5916172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		46AD5900172A1178000A58E4 = {
 			isa = PBXGroup;
 			children = (
+				469DEA7418FAF8260005797A /* Images.xcassets */,
 				46AD5912172A1178000A58E4 /* Moshe */,
 				46AD5936172A1178000A58E4 /* MosheTests */,
 				46AD590A172A1178000A58E4 /* Products */,
@@ -321,6 +324,7 @@
 			files = (
 				46AD5917172A1178000A58E4 /* InfoPlist.strings in Resources */,
 				46AD591F172A1178000A58E4 /* Default.png in Resources */,
+				469DEA7518FAF8260005797A /* Images.xcassets in Resources */,
 				46AD5921172A1178000A58E4 /* Default@2x.png in Resources */,
 				46AD5923172A1178000A58E4 /* Default-568h@2x.png in Resources */,
 				46AD5929172A1178000A58E4 /* MBViewController.xib in Resources */,
@@ -477,6 +481,8 @@
 		46AD5942172A1178000A58E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moshe/Moshe Berman-Prefix.pch";
@@ -490,6 +496,8 @@
 		46AD5943172A1178000A58E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moshe/Moshe Berman-Prefix.pch";
