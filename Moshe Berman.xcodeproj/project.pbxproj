@@ -44,14 +44,14 @@
 
 /* Begin PBXFileReference section */
 		4687A47C172AB95C00C886E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		46AD5909172A1178000A58E4 /* Moshe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moshe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46AD5909172A1178000A58E4 /* Moshe Berman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moshe Berman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AD590C172A1178000A58E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		46AD590E172A1178000A58E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		46AD5910172A1178000A58E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		46AD5914172A1178000A58E4 /* Moshe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe-Info.plist"; sourceTree = "<group>"; };
+		46AD5914172A1178000A58E4 /* Moshe Berman-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe Berman-Info.plist"; sourceTree = "<group>"; };
 		46AD5916172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		46AD5918172A1178000A58E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		46AD591A172A1178000A58E4 /* Moshe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moshe-Prefix.pch"; sourceTree = "<group>"; };
+		46AD591A172A1178000A58E4 /* Moshe Berman-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moshe Berman-Prefix.pch"; sourceTree = "<group>"; };
 		46AD591B172A1178000A58E4 /* MBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAppDelegate.h; sourceTree = "<group>"; };
 		46AD591C172A1178000A58E4 /* MBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAppDelegate.m; sourceTree = "<group>"; };
 		46AD591E172A1178000A58E4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -60,9 +60,9 @@
 		46AD5924172A1178000A58E4 /* MBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBViewController.h; sourceTree = "<group>"; };
 		46AD5925172A1178000A58E4 /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
 		46AD5928172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController.xib; sourceTree = "<group>"; };
-		46AD592F172A1178000A58E4 /* MosheTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MosheTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46AD592F172A1178000A58E4 /* Moshe BermanTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moshe BermanTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AD5930172A1178000A58E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		46AD5938172A1178000A58E4 /* MosheTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MosheTests-Info.plist"; sourceTree = "<group>"; };
+		46AD5938172A1178000A58E4 /* Moshe BermanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe BermanTests-Info.plist"; sourceTree = "<group>"; };
 		46AD593A172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		46AD593C172A1178000A58E4 /* MosheTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MosheTests.h; sourceTree = "<group>"; };
 		46AD593D172A1178000A58E4 /* MosheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MosheTests.m; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 		46AD590A172A1178000A58E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46AD5909172A1178000A58E4 /* Moshe.app */,
-				46AD592F172A1178000A58E4 /* MosheTests.octest */,
+				46AD5909172A1178000A58E4 /* Moshe Berman.app */,
+				46AD592F172A1178000A58E4 /* Moshe BermanTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,10 +158,10 @@
 		46AD5913172A1178000A58E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				46AD5914172A1178000A58E4 /* Moshe-Info.plist */,
+				46AD5914172A1178000A58E4 /* Moshe Berman-Info.plist */,
 				46AD5915172A1178000A58E4 /* InfoPlist.strings */,
 				46AD5918172A1178000A58E4 /* main.m */,
-				46AD591A172A1178000A58E4 /* Moshe-Prefix.pch */,
+				46AD591A172A1178000A58E4 /* Moshe Berman-Prefix.pch */,
 				46AD591E172A1178000A58E4 /* Default.png */,
 				46AD5920172A1178000A58E4 /* Default@2x.png */,
 				46AD5922172A1178000A58E4 /* Default-568h@2x.png */,
@@ -182,7 +182,7 @@
 		46AD5937172A1178000A58E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				46AD5938172A1178000A58E4 /* MosheTests-Info.plist */,
+				46AD5938172A1178000A58E4 /* Moshe BermanTests-Info.plist */,
 				46AD5939172A1178000A58E4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -223,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		46AD5908172A1178000A58E4 /* Moshe */ = {
+		46AD5908172A1178000A58E4 /* Moshe Berman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46AD5941172A1178000A58E4 /* Build configuration list for PBXNativeTarget "Moshe" */;
+			buildConfigurationList = 46AD5941172A1178000A58E4 /* Build configuration list for PBXNativeTarget "Moshe Berman" */;
 			buildPhases = (
 				46AD5905172A1178000A58E4 /* Sources */,
 				46AD5906172A1178000A58E4 /* Frameworks */,
@@ -235,14 +235,14 @@
 			);
 			dependencies = (
 			);
-			name = Moshe;
+			name = "Moshe Berman";
 			productName = Moshe;
-			productReference = 46AD5909172A1178000A58E4 /* Moshe.app */;
+			productReference = 46AD5909172A1178000A58E4 /* Moshe Berman.app */;
 			productType = "com.apple.product-type.application";
 		};
-		46AD592E172A1178000A58E4 /* MosheTests */ = {
+		46AD592E172A1178000A58E4 /* Moshe BermanTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46AD5944172A1178000A58E4 /* Build configuration list for PBXNativeTarget "MosheTests" */;
+			buildConfigurationList = 46AD5944172A1178000A58E4 /* Build configuration list for PBXNativeTarget "Moshe BermanTests" */;
 			buildPhases = (
 				46AD592A172A1178000A58E4 /* Sources */,
 				46AD592B172A1178000A58E4 /* Frameworks */,
@@ -254,9 +254,9 @@
 			dependencies = (
 				46AD5935172A1178000A58E4 /* PBXTargetDependency */,
 			);
-			name = MosheTests;
+			name = "Moshe BermanTests";
 			productName = MosheTests;
-			productReference = 46AD592F172A1178000A58E4 /* MosheTests.octest */;
+			productReference = 46AD592F172A1178000A58E4 /* Moshe BermanTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -269,7 +269,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Moshe Berman";
 			};
-			buildConfigurationList = 46AD5904172A1178000A58E4 /* Build configuration list for PBXProject "Moshe" */;
+			buildConfigurationList = 46AD5904172A1178000A58E4 /* Build configuration list for PBXProject "Moshe Berman" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -281,8 +281,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46AD5908172A1178000A58E4 /* Moshe */,
-				46AD592E172A1178000A58E4 /* MosheTests */,
+				46AD5908172A1178000A58E4 /* Moshe Berman */,
+				46AD592E172A1178000A58E4 /* Moshe BermanTests */,
 			);
 		};
 /* End PBXProject section */
@@ -356,7 +356,7 @@
 /* Begin PBXTargetDependency section */
 		46AD5935172A1178000A58E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 46AD5908172A1178000A58E4 /* Moshe */;
+			target = 46AD5908172A1178000A58E4 /* Moshe Berman */;
 			targetProxy = 46AD5934172A1178000A58E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -449,9 +449,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Moshe/Moshe-Prefix.pch";
-				INFOPLIST_FILE = "Moshe/Moshe-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Moshe/Moshe Berman-Prefix.pch";
+				INFOPLIST_FILE = "Moshe/Moshe Berman-Info.plist";
+				PRODUCT_NAME = "Moshe Berman";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -460,9 +460,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Moshe/Moshe-Prefix.pch";
-				INFOPLIST_FILE = "Moshe/Moshe-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Moshe/Moshe Berman-Prefix.pch";
+				INFOPLIST_FILE = "Moshe/Moshe Berman-Info.plist";
+				PRODUCT_NAME = "Moshe Berman";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -477,8 +477,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moshe/Moshe-Prefix.pch";
-				INFOPLIST_FILE = "MosheTests/MosheTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MosheTests/Moshe BermanTests-Info.plist";
+				PRODUCT_NAME = "Moshe BermanTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -494,8 +494,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Moshe/Moshe-Prefix.pch";
-				INFOPLIST_FILE = "MosheTests/MosheTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MosheTests/Moshe BermanTests-Info.plist";
+				PRODUCT_NAME = "Moshe BermanTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -504,7 +504,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46AD5904172A1178000A58E4 /* Build configuration list for PBXProject "Moshe" */ = {
+		46AD5904172A1178000A58E4 /* Build configuration list for PBXProject "Moshe Berman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46AD593F172A1178000A58E4 /* Debug */,
@@ -513,7 +513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46AD5941172A1178000A58E4 /* Build configuration list for PBXNativeTarget "Moshe" */ = {
+		46AD5941172A1178000A58E4 /* Build configuration list for PBXNativeTarget "Moshe Berman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46AD5942172A1178000A58E4 /* Debug */,
@@ -522,7 +522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46AD5944172A1178000A58E4 /* Build configuration list for PBXNativeTarget "MosheTests" */ = {
+		46AD5944172A1178000A58E4 /* Build configuration list for PBXNativeTarget "Moshe BermanTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46AD5945172A1178000A58E4 /* Debug */,

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>770CA5A6-6A0F-42B4-B80A-11549A97670B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Moshe</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>31CE1F38-1BFF-4827-A854-6185BC0990E8</key>
+		<string>https://github.com/MosheBerman/MosheBerman-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Moshe.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>31CE1F38-1BFF-4827-A854-6185BC0990E8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MosheBerman/MosheBerman-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>31CE1F38-1BFF-4827-A854-6185BC0990E8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>31CE1F38-1BFF-4827-A854-6185BC0990E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MosheBerman-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

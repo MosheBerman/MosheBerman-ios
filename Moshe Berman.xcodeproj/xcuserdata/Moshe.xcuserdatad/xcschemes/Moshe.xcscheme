@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46AD5908172A1178000A58E4"
                BuildableName = "Moshe.app"
-               BlueprintName = "Moshe"
-               ReferencedContainer = "container:Moshe.xcodeproj">
+               BlueprintName = "Moshe Berman"
+               ReferencedContainer = "container:Moshe Berman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46AD592E172A1178000A58E4"
                BuildableName = "MosheTests.octest"
-               BlueprintName = "MosheTests"
-               ReferencedContainer = "container:Moshe.xcodeproj">
+               BlueprintName = "Moshe BermanTests"
+               ReferencedContainer = "container:Moshe Berman.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46AD5908172A1178000A58E4"
             BuildableName = "Moshe.app"
-            BlueprintName = "Moshe"
-            ReferencedContainer = "container:Moshe.xcodeproj">
+            BlueprintName = "Moshe Berman"
+            ReferencedContainer = "container:Moshe Berman.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46AD5908172A1178000A58E4"
             BuildableName = "Moshe.app"
-            BlueprintName = "Moshe"
-            ReferencedContainer = "container:Moshe.xcodeproj">
+            BlueprintName = "Moshe Berman"
+            ReferencedContainer = "container:Moshe Berman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46AD5908172A1178000A58E4"
             BuildableName = "Moshe.app"
-            BlueprintName = "Moshe"
-            ReferencedContainer = "container:Moshe.xcodeproj">
+            BlueprintName = "Moshe Berman"
+            ReferencedContainer = "container:Moshe Berman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
