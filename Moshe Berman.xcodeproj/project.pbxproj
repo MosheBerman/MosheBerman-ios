@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		469DEA6818FAC3360005797A /* MBBlogPostData.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6718FAC3360005797A /* MBBlogPostData.m */; };
+		469DEA6818FAC3360005797A /* MOSBlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 469DEA6718FAC3360005797A /* MOSBlogPost.m */; };
 		46AD5917172A1178000A58E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46AD5915172A1178000A58E4 /* InfoPlist.strings */; };
 		46AD5919172A1178000A58E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5918172A1178000A58E4 /* main.m */; };
 		46AD591D172A1178000A58E4 /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD591C172A1178000A58E4 /* MBAppDelegate.m */; };
@@ -21,8 +21,8 @@
 		46AD5949172A14D1000A58E4 /* MBBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD5948172A14D1000A58E4 /* MBBannerCell.m */; };
 		46AD594B172A14E0000A58E4 /* MBBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AD594A172A14E0000A58E4 /* MBBannerCell.xib */; };
 		46B062A51733291E009C966F /* MBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062A41733291E009C966F /* MBDataSource.m */; };
-		46B062A817332937009C966F /* MBAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062A717332937009C966F /* MBAppData.m */; };
-		46B062AB1733294C009C966F /* MBRepoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062AA1733294C009C966F /* MBRepoData.m */; };
+		46B062A817332937009C966F /* MOSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062A717332937009C966F /* MOSApp.m */; };
+		46B062AB1733294C009C966F /* MOSRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062AA1733294C009C966F /* MOSRepo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		469DEA6618FAC3360005797A /* MBBlogPostData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBBlogPostData.h; path = "Data Source/MBBlogPostData.h"; sourceTree = "<group>"; };
-		469DEA6718FAC3360005797A /* MBBlogPostData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBBlogPostData.m; path = "Data Source/MBBlogPostData.m"; sourceTree = "<group>"; };
+		469DEA6618FAC3360005797A /* MOSBlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOSBlogPost.h; path = "Data Source/MOSBlogPost.h"; sourceTree = "<group>"; };
+		469DEA6718FAC3360005797A /* MOSBlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOSBlogPost.m; path = "Data Source/MOSBlogPost.m"; sourceTree = "<group>"; };
 		46AD5909172A1178000A58E4 /* Moshe Berman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moshe Berman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AD5914172A1178000A58E4 /* Moshe Berman-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Moshe Berman-Info.plist"; sourceTree = "<group>"; };
 		46AD5916172A1178000A58E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -61,10 +61,10 @@
 		46AD594A172A14E0000A58E4 /* MBBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MBBannerCell.xib; path = Banner/MBBannerCell.xib; sourceTree = "<group>"; };
 		46B062A31733291E009C966F /* MBDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDataSource.h; path = "Data Source/MBDataSource.h"; sourceTree = "<group>"; };
 		46B062A41733291E009C966F /* MBDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDataSource.m; path = "Data Source/MBDataSource.m"; sourceTree = "<group>"; };
-		46B062A617332937009C966F /* MBAppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBAppData.h; path = "Data Source/MBAppData.h"; sourceTree = "<group>"; };
-		46B062A717332937009C966F /* MBAppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBAppData.m; path = "Data Source/MBAppData.m"; sourceTree = "<group>"; };
-		46B062A91733294C009C966F /* MBRepoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRepoData.h; path = "Data Source/MBRepoData.h"; sourceTree = "<group>"; };
-		46B062AA1733294C009C966F /* MBRepoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRepoData.m; path = "Data Source/MBRepoData.m"; sourceTree = "<group>"; };
+		46B062A617332937009C966F /* MOSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOSApp.h; path = "Data Source/MOSApp.h"; sourceTree = "<group>"; };
+		46B062A717332937009C966F /* MOSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOSApp.m; path = "Data Source/MOSApp.m"; sourceTree = "<group>"; };
+		46B062A91733294C009C966F /* MOSRepo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOSRepo.h; path = "Data Source/MOSRepo.h"; sourceTree = "<group>"; };
+		46B062AA1733294C009C966F /* MOSRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOSRepo.m; path = "Data Source/MOSRepo.m"; sourceTree = "<group>"; };
 		46B062AC17332A07009C966F /* MBDisplayCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDisplayCategories.h; sourceTree = "<group>"; };
 		46B062B117332C17009C966F /* MBURLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBURLConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,12 +186,12 @@
 		46B062A2173328FD009C966F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46B062A617332937009C966F /* MBAppData.h */,
-				46B062A717332937009C966F /* MBAppData.m */,
-				469DEA6618FAC3360005797A /* MBBlogPostData.h */,
-				469DEA6718FAC3360005797A /* MBBlogPostData.m */,
-				46B062A91733294C009C966F /* MBRepoData.h */,
-				46B062AA1733294C009C966F /* MBRepoData.m */,
+				46B062A617332937009C966F /* MOSApp.h */,
+				46B062A717332937009C966F /* MOSApp.m */,
+				469DEA6618FAC3360005797A /* MOSBlogPost.h */,
+				469DEA6718FAC3360005797A /* MOSBlogPost.m */,
+				46B062A91733294C009C966F /* MOSRepo.h */,
+				46B062AA1733294C009C966F /* MOSRepo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,9 +314,9 @@
 				46AD5926172A1178000A58E4 /* MBViewController.m in Sources */,
 				46AD5949172A14D1000A58E4 /* MBBannerCell.m in Sources */,
 				46B062A51733291E009C966F /* MBDataSource.m in Sources */,
-				46B062A817332937009C966F /* MBAppData.m in Sources */,
-				469DEA6818FAC3360005797A /* MBBlogPostData.m in Sources */,
-				46B062AB1733294C009C966F /* MBRepoData.m in Sources */,
+				46B062A817332937009C966F /* MOSApp.m in Sources */,
+				469DEA6818FAC3360005797A /* MOSBlogPost.m in Sources */,
+				46B062AB1733294C009C966F /* MOSRepo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
