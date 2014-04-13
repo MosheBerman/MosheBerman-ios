@@ -23,7 +23,6 @@
 		46B062A51733291E009C966F /* MBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062A41733291E009C966F /* MBDataSource.m */; };
 		46B062A817332937009C966F /* MBAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062A717332937009C966F /* MBAppData.m */; };
 		46B062AB1733294C009C966F /* MBRepoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062AA1733294C009C966F /* MBRepoData.m */; };
-		46B062B017332BD8009C966F /* MBNetworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B062AF17332BD8009C966F /* MBNetworkLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +66,6 @@
 		46B062A91733294C009C966F /* MBRepoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRepoData.h; path = "Data Source/MBRepoData.h"; sourceTree = "<group>"; };
 		46B062AA1733294C009C966F /* MBRepoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRepoData.m; path = "Data Source/MBRepoData.m"; sourceTree = "<group>"; };
 		46B062AC17332A07009C966F /* MBDisplayCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDisplayCategories.h; sourceTree = "<group>"; };
-		46B062AE17332BD8009C966F /* MBNetworkLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBNetworkLoader.h; path = "Network Loader/MBNetworkLoader.h"; sourceTree = "<group>"; };
-		46B062AF17332BD8009C966F /* MBNetworkLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBNetworkLoader.m; path = "Network Loader/MBNetworkLoader.m"; sourceTree = "<group>"; };
 		46B062B117332C17009C966F /* MBURLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBURLConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +133,6 @@
 				46AD5927172A1178000A58E4 /* MBViewController.xib */,
 				469DEA6518FAAF5F0005797A /* Data Source */,
 				469DEA6418FAAEEA0005797A /* Headers */,
-				46B062AD17332BBA009C966F /* Network Loader */,
 				46B062A2173328FD009C966F /* Model */,
 				46AD594C172A14E4000A58E4 /* Banner UI */,
 				46AD5913172A1178000A58E4 /* Supporting Files */,
@@ -198,15 +194,6 @@
 				46B062AA1733294C009C966F /* MBRepoData.m */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		46B062AD17332BBA009C966F /* Network Loader */ = {
-			isa = PBXGroup;
-			children = (
-				46B062AE17332BD8009C966F /* MBNetworkLoader.h */,
-				46B062AF17332BD8009C966F /* MBNetworkLoader.m */,
-			);
-			name = "Network Loader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +317,6 @@
 				46B062A817332937009C966F /* MBAppData.m in Sources */,
 				469DEA6818FAC3360005797A /* MBBlogPostData.m in Sources */,
 				46B062AB1733294C009C966F /* MBRepoData.m in Sources */,
-				46B062B017332BD8009C966F /* MBNetworkLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
