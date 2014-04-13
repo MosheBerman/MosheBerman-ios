@@ -200,7 +200,7 @@
         MOSBanner *banner = [[MOSBanner alloc] init];
         
         NSURL *url = [NSURL URLWithString:dictionary[@"url"]];
-        NSURL *imageURL = [NSURL URLWithString:dictionary[@"image_url"]];
+        NSURL *imageURL = [NSURL URLWithString:dictionary[@"mobile_banner"]];
         
         [banner setUrl:url];
         [banner setImageURL:imageURL];
