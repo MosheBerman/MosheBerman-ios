@@ -52,14 +52,10 @@ static NSString *CellReuseIdentifier = @"Cell ID";
     [[self dataSource] addObserver:self forKeyPath:@"areBlogPostsReady" options:0 context:nil];
     [[self dataSource] addObserver:self forKeyPath:@"areReposReady" options:0 context:nil];
     
-    /**
-     *  Reload the data source table.
-     *
-     *  TODO: Cache the downloaded data and attempt to reload from disk first.
-     */
+    /* Wire up our table. */
+    [[self informationTable] setDelegate:self];
+    [[self informationTable] setDataSource:self];
     
-    [[self dataSource] reloadData];
-	
     /* Where everybody knows your name. */
 	[self setTitle:@"Moshe Berman"];
     
@@ -68,6 +64,15 @@ static NSString *CellReuseIdentifier = @"Cell ID";
     
     /* Respond to category changes by reloading the table. */
     [[self informationToggle] addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
+    
+    /**
+     *  Reload the data source table.
+     *
+     *  TODO: Cache the downloaded data and attempt to reload from disk first.
+     */
+    
+    [[self dataSource] reloadData];
+    [self reloadData];
 }
 
 - (void)dealloc
@@ -123,7 +128,7 @@ static NSString *CellReuseIdentifier = @"Cell ID";
 
 - (void)reloadData
 {
-    [[self informationTable] reloadData];
+    [[self informationTable] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 /** -----
@@ -157,6 +162,8 @@ static NSString *CellReuseIdentifier = @"Cell ID";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier forIndexPath:indexPath];
     
+    [[cell textLabel] setText:@""]; //  Empty the text in case of recycled cells.
+    
     /* This case is true when there is no data for a given category. */
     if (0 == [self expectedCount])
     {
@@ -168,20 +175,17 @@ static NSString *CellReuseIdentifier = @"Cell ID";
             [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
         }
         
-        /* Clear the other cells. */
-        else
-        {
-            [[cell textLabel] setText:@""]; //  Empty the text in case of recycled cells.
-        }
-        
-        //  Clear accessories.
+        //  Clear interaction related properties
         [cell setAccessoryType:UITableViewCellAccessoryNone];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     
     /* ...otherwise, we'll show the data for the category. */
     else
     {
-        
+        //  Clear interaction related properties
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
     
     return cell;
@@ -226,7 +230,7 @@ static NSString *CellReuseIdentifier = @"Cell ID";
     }
     
     /* If we are displaying code, we want enough rows for the GitHub repos. */
-    else if (selectedIndex == [[[self dataSource] repos] count])
+    else if (selectedIndex == MBDisplayCategoryCode)
     {
         rowCount = [[[self dataSource] repos] count];
     }
